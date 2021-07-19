@@ -106,6 +106,10 @@ app.get('/accueil', (req,res)=>{
   res.render('accueil');
 })
 
+app.get('/', (req,res)=>{
+  res.redirect('/accueil');
+})
+
 //consulter un demandeur
 app.get('/consulterdemandeur', (req,res)=>{
   });

@@ -1,0 +1,371 @@
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS for styling and layout-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://kit.fontawesome.com/e25aabb098.js" crossorigin="anonymous"></script>
+        <script defer src="theme.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+
+        <script>
+          function passvalues(){
+            var matricule = document.getElementById("matriculeinput").value;
+            var nomprenom = document.getElementById("nomprenominput").value;
+            var option1 = document.getElementById("check1").value;
+            var option2 = document.getElementById("check2").value;
+            var option3 = document.getElementById("check3").value;
+            var option4 = document.getElementById("check4").value;
+            var option5 = document.getElementById("check5").value;
+            var option6 = document.getElementById("check6").value;
+            var option7 = document.getElementById("check7").value;
+            var option8 = document.getElementById("check8").value;
+            var option9 = document.getElementById("check9").value;
+            var option10 = document.getElementById("check10").value;
+            var option11 = document.getElementById("check11").value;
+            var option12 = document.getElementById("check12").value;
+            var dateheure = document.getElementById("datetimeinput").value;
+
+    
+            localStorage.setItem("Matricule",matricule);
+            localStorage.setItem("NomPrenom",nomprenom);
+            localStorage.setItem("Option1",option1);
+            localStorage.setItem("Option2",option2);
+            localStorage.setItem("Option3",option3);
+            localStorage.setItem("Option4",option4);
+            localStorage.setItem("Option5",option5);
+            localStorage.setItem("Option6",option6);
+            localStorage.setItem("Option7",option7);
+            localStorage.setItem("Option8",option8);
+            localStorage.setItem("Option9",option9);
+            localStorage.setItem("Option10",option10);
+            localStorage.setItem("Option11",option11);
+            localStorage.setItem("Option12",option12);
+            localStorage.setItem("DateHeure",dateheure);
+            return false;
+
+          }
+          </script>
+
+        <title>Accusé_Reception</title>
+        <link rel="stylesheet" href="/css/styleaccuse.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: #f1f1f1;">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">1)-Introuduire Les Accusés De Receptions</a>
+        <a href="introduiredemandeur">2)-Introuduire Les Demandeurs</a>
+        <a href="listedemandeurs">3)-Valider Les Demandeurs</a>
+        <a href="consulterclassements">4)-Consulter Le Classement Des Demandeurs</a>
+        <a href="#">5)-Statistique</a>
+        <a href="#">6)-Introuduire Les Recours</a>
+        <a href="#">7)-Consulter L'Historique</a>  
+        <a href="#">8)-Chaine PV</a>
+        <a href="gerercompte">9)-Gerer Les Comptes</a>
+      </div>
+      <div id="main">
+        <div class="container-fluid bg-white border">
+          <div class="row">
+            <div class="col"><img class="img-fluid" width="70" height="70" src="log0.png"></div>
+            <div class="col"><br><h3 id="navbar_logo" class="text-right">LOGIS</h3></div>
+          </div>
+          <br>
+        </div>
+        <br>
+        <div class="container-fluid " style="border-radius: 0.5rem; background-color: #f1f1f1;">
+          <div class="row">
+            <div class="col-sm-2"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></div>
+            <div class="col-sm-8">
+              <a href="accueil" data-toggle="tooltip" data-placement="left" title="Accueil"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-home icon "></i></button></a>
+              <a href="monprofile" data-toggle="tooltip" data-placement="top" title="Mon Profile"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-user icon"></i></button></a>
+              <a href="aide" data-toggle="tooltip" data-placement="top" title="Aide"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="far fa-question-circle icon"></i></button></a>
+              <a href="home" data-toggle="tooltip" data-placement="right" title="Deconnexion"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-sign-out-alt icon"></i></button></a>
+            </div>
+            <div class="col-sm-2">
+              <div class="chip " style="float: right; color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);" >
+                <img src="person.png" class="rounded-circle" alt="Person" width="96" height="96">Nom  Prénom
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;" id="invoice">
+          <br>
+            <div class="about-section">
+              <h1>Introduire L'Acusée De Reception</h1>
+            </div>
+          <br>
+          <div class="col-sm-12">
+            <a href="listeaccuses" style="color: white; outline: none;"><button type="button" class="btn float-right" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;">Aller Vers La Liste</button></a>
+          </div>
+          <br><br>
+        <form action="accuse" class="needs-validation" novalidate>
+          <div class="container-xl bg-white mt-3 border" style="border-radius: 0.5rem;" >
+            <div class="row">
+              <div class="col"><br><br><br><br><br><br><img class="img-fluid float-left" style="width: 140px; height: 70px; margin-left: 10%;" src="800px-ESI_Logo.png"></div>
+              <div class="col-sm-8">
+                <br>
+                <h6 style="text-align: center;"><strong> الجـمهوريــــة الجــزائريــة الديمــقراطيــة الشــعبية </strong></em></h6>
+                <h6 style="text-align: center;"> République Algérienne Démocratique et Populaire </h6>
+                <h6 style="text-align: center;"><strong> وزارة التـعليـم العــالي و البــحث العلـــمي </strong></h6>
+                <h6 style="text-align: center;"> Ministère de l’Enseignement Supérieur et de la Recherche Scientifique </h6>
+                <hr style="width: 100%; background-color: blue; height: 2px;">
+                <h6 style="text-align: center;"><em><strong> لجنة السكن الخاصة بسلك الإداريين والأعوان المهنيين </em></h6>
+                <h6 style="text-align: center;"><em><strong> Commission de logement </strong></em></h6>
+                <h6 style="text-align: center;"><em><strong> Email : clog@esi.dz </strong></em></h6>
+                <h6 style="text-align: center;"><em><strong> Accusé de Réception </strong></em></h6>
+                <br>
+              </div>
+              <div class="col" style="width: 190px;"></div>
+            </div>
+            <div class="col" style="font-style: italic; font-size: medium;">
+                <div class="form-group" style="margin-left: 20%;">
+                  <label for="matriculeinput"> Matricule  : </label>
+                  <input type="number" class="form-control" id="matriculeinput" placeholder="Saisir le matricule ici" name="matricule" required style="width: 40%;">
+                  <div class="valid-feedback">Valide.</div>
+                  <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                </div>
+                <div class="form-group" style="margin-left: 20%;">
+                  <label for="nomprenominput"> Nom et Prénom  : </label>
+                  <input type="text" class="form-control" id="nomprenominput" placeholder="Saisir le nom et le prénom ici" name="nomprenom" required style="width: 60%;">
+                  <div class="valid-feedback">Valide.</div>
+                  <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check1">
+                          <input type="checkbox" class="form-check-input" id="check1" name="option1">1-Photo 
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check ">
+                        <label class="form-check-label" for="check2">
+                          <input type="checkbox" class="form-check-input" id="check2" name="option2">2-Demande Manuscrite
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check3">
+                          <input type="checkbox" class="form-check-input" id="check3" name="option3">3-Photocopie de la pièce d’identité
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check4">
+                          <input type="checkbox" class="form-check-input" id="check4" name="option4">4-Fiche de renseignement
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check5">
+                          <input type="checkbox" class="form-check-input" id="check5" name="option5">5-Extrait de naissance
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check6">
+                          <input type="checkbox" class="form-check-input" id="check6" name="option6">6-Fiche Familiales ou individuel
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check7">
+                          <input type="checkbox" class="form-check-input" id="check7" name="option7">7-PV de la première installation dans le poste
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check8">
+                          <input type="checkbox" class="form-check-input" id="check8" name="option8">8-Arrêté de nomination visé
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check9">
+                          <input type="checkbox" class="form-check-input" id="check9" name="option9">9-Arrêté de responsabilité visé
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check10">
+                          <input type="checkbox" class="form-check-input" id="check10" name="option10">10-Arrêté de nomination visée hors secteur MESRS (FP)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check11">
+                          <input type="checkbox" class="form-check-input" id="check11" name="option11"> 11-Arrêté de nomination visée du conjoint
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check12">
+                          <input type="checkbox" class="form-check-input" id="check12" name="option12">12-Attestation ayant droit 
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <br><br>
+                      <div class="form-group">
+                        <label for="datetimeinput"> Date et Heure  : </label>
+                        <input type="datetime-local" class="form-control" id="datetimeinput" name="datetime" style="width: 30%;" required>
+                        <div class="valid-feedback">Valide.</div>
+                        <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid float-right" style="width: 360px; height: 300px;" src="cachet_07-04-2021.jpg">
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="container-xl bg-white mt-3 border" style="border-radius: 0.5rem;" >
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="ndossierinput"> Numéro du Dossier  : </label>
+                      <input type="number" class="form-control" id="ndossierinput" placeholder="Saisir le numéro du dossier ici" name="ndossier" required >
+                      <div class="valid-feedback">Valide.</div>
+                      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group" style="margin-left: 20%;">
+                      <label for="dateinput"> Date de depot de Dossier  : </label>
+                      <input type="datetime-local" class="form-control" id="dateinput" name="date" required >
+                      <div class="valid-feedback">Valide.</div>
+                      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label for="dateinput"> Etat du Dossier  : </label>
+                    <br>
+                    <div class="form-check">
+                      <label class="form-check-label" for="completinput">
+                          <input type="radio" class="form-check-input" id="completinput" name="optradio" value="Complet">Complet
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="incompletinput">
+                          <input type="radio" class="form-check-input" id="incompletinput" name="optradio" value="Incomplet">Incomplet
+                      </label>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+          <div class="container-xl mt-3">
+            <div class="row">
+              <div class="col" style="background-color: white;"><button type="submit" value="Click" onclick="passvalues();" class="btn float-left" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color:white;">Sauvgarder</button></div>
+            </div>
+          </div>
+        </form>
+        <br>
+        </div>
+
+        <br>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+            <br>
+            <div class="row">
+               <div class="col-sm-8 ">
+                    <div class="col"><a href="../../Contacter_Nous/index.html"><strong> Contacter Nous </strong></a></div>
+                </div>
+                <div class="col"><img class="img-fluid float-right" width="170" height="100" src="800px-ESI_Logo.png"></div> 
+            </div>
+        </div>
+        <br>
+      </div>
+
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+      </script>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+
+        <script>
+          // Disable form submissions if there are invalid fields
+          (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              // Get the forms we want to add validation styles to
+              var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+        </script>
+    </body>
+</html>

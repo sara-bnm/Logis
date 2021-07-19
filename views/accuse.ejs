@@ -1,0 +1,372 @@
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS for styling and layout-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://kit.fontawesome.com/e25aabb098.js" crossorigin="anonymous"></script>
+        <script defer src="theme.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+
+        
+        
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+        <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        
+        
+
+        
+        <title>Accusé de Reception</title>
+        <link rel="stylesheet" href="/css/styleaccuse.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: #f1f1f1;">
+        <div class="container-fluid bg-white border">
+          <div class="row">
+            <div class="col"><img class="img-fluid" width="70" height="70" src="log0.png"></div>
+            <div class="col"><br><h3 id="navbar_logo" class="text-right">LOGIS</h3></div>
+          </div>
+          <br>
+        </div>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+          <br>
+            <div class="about-section">
+              <h1>L'Acusée De Reception</h1>
+            </div>
+          <br>
+          <div class="row">
+              <div class="col-sm-12">
+        
+                <a href="introduireaccuse" style="color: white; outline: none;"><button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;">Retour à La Page Précidante</button></a>
+                <button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white" onclick="printContent('invoice');"><img class="img-fluid" width="35" height="35" src="printer.png"> Imprimer </button>
+                <button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;" onclick="CreatePDFfromHTML();" >Télécharger pdf</button>
+                <a href="listeaccuses" style="color: white; outline: none;"><button type="button" class="btn float-right" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;">Aller Vers La Liste</button></a>
+                
+              </div>
+          </div>
+          <br>
+      
+        <div style="overflow-x:auto;">
+        <div id="invoice" class="container-xl bg-white mt-3 border" style="border-radius: 0.5rem;" >
+          <div class="row">
+            <div class="col"><br><br><br><br><br> <img class="img-fluid float-left" style="width: 140px; height: 70px; margin-left: 10%;" src="800px-ESI_Logo.png"></div>
+            <div class="col-sm-8">
+              <h6 style="text-align: center;"><strong> الجـمهوريــــة الجــزائريــة الديمــقراطيــة الشــعبية </strong></em></h6>
+              <h6 style="text-align: center;"> République Algérienne Démocratique et Populaire </h6>
+              <h6 style="text-align: center;"><strong> وزارة التـعليـم العــالي و البــحث العلـــمي </strong></h6>
+              <h6 style="text-align: center;"> Ministère de l’Enseignement Supérieur et de la Recherche Scientifique </h6>
+              <hr style="width: 100%; background-color: blue; height: 2px;">
+              <h6 style="text-align: center;"><em><strong> لجنة السكن الخاصة بسلك الإداريين والأعوان المهنيين </em></h6>
+              <h6 style="text-align: center;"><em><strong> Commission de logement </strong></em></h6>
+              <h6 style="text-align: center;"><em><strong> Email : clog@esi.dz </strong></em></h6>
+              <h6 style="text-align: center;"><em><strong> Accusé de Réception </strong></em></h6>
+            </div>
+            <div class="col" style="width: 190px;"></div>
+          </div>
+          <div class="col" style="font-style: italic; font-size: medium;">
+              <div class="form-group" style="margin-left: 20%;">
+                  <label for="matriculeinput"> Matricule  : <span id="resultmatricule"></span></label>
+              </div>
+              <div class="form-group" style="margin-left: 20%;">
+                  <label for="nomprenominput"> Nom et Prénom  : <span id="resultnomprenom"></span></label>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check1">
+                          1-Photo <span id="result1"></span> 
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check ">
+                        <label class="form-check-label" for="check2">
+                          2-Demande Manuscrite <span id="result2"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check3">
+                          3-Photocopie de la pièce d’identité <span id="result3"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check4">
+                          4-Fiche de renseignement <span id="result4"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check5">
+                          5-Extrait de naissance <span id="result5"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check6">
+                          6-Fiche Familiales ou individuel <span id="result6"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check7">
+                          7-PV de la première installation dans le poste <span id="result7"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check8">
+                          8-Arrêté de nomination visé <span id="result8"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check9">
+                          9-Arrêté de responsabilité visé <span id="result9"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check10">
+                          10-Arrêté de nomination visée hors secteur MESRS (FP) <span id="result10"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check11">
+                          11-Arrêté de nomination visée du conjoint <span id="result11"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check12">
+                          12-Attestation ayant droit <span id="result12"></span> 
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <br><br>
+                      <div class="form-group">
+                        <label for="datetimeinput"> Date et Heure  : <span id="resultdatetime"></span></label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid float-right" style="width: 310px; height: 250px;" src="cachet_07-04-2021.jpg">
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <hr style="border-top: 1px dashed black;">
+          <div class="row">
+            <div class="col"><br><br><br><br><br> <img class="img-fluid float-left" style="width: 140px; height: 70px; margin-left: 10%;" src="800px-ESI_Logo.png"></div>
+            <div class="col-sm-8">
+              <h6 style="text-align: center;"><strong> الجـمهوريــــة الجــزائريــة الديمــقراطيــة الشــعبية </strong></em></h6>
+              <h6 style="text-align: center;"> République Algérienne Démocratique et Populaire </h6>
+              <h6 style="text-align: center;"><strong> وزارة التـعليـم العــالي و البــحث العلـــمي </strong></h6>
+              <h6 style="text-align: center;"> Ministère de l’Enseignement Supérieur et de la Recherche Scientifique </h6>
+              <hr style="width: 100%; background-color: blue; height: 2px;">
+              <h6 style="text-align: center;"><em><strong> لجنة السكن الخاصة بسلك الإداريين والأعوان المهنيين </em></h6>
+              <h6 style="text-align: center;"><em><strong> Commission de logement </strong></em></h6>
+              <h6 style="text-align: center;"><em><strong> Email : clog@esi.dz </strong></em></h6>
+              <h6 style="text-align: center;"><em><strong> Accusé de Réception </strong></em></h6>
+            </div>
+            <div class="col" style="width: 190px;"></div>
+          </div>
+          <div class="col" style="font-style: italic; font-size: medium;">
+              <div class="form-group" style="margin-left: 20%;">
+                  <label for="matriculeinput"> Matricule  : <span id="resultmatricule2"></span></label>
+              </div>
+              <div class="form-group" style="margin-left: 20%;">
+                  <label for="nomprenominput"> Nom et Prénom  : <span id="resultnomprenom2"></span></label>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check1">
+                          1-Photo <span id="result12"></span> 
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check ">
+                        <label class="form-check-label" for="check2">
+                          2-Demande Manuscrite <span id="result22"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check3">
+                          3-Photocopie de la pièce d’identité <span id="result32"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check4">
+                          4-Fiche de renseignement <span id="result42"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check5">
+                          5-Extrait de naissance <span id="result52"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check6">
+                          6-Fiche Familiales ou individuel <span id="result62"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check7">
+                          7-PV de la première installation dans le poste <span id="result72"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check8">
+                          8-Arrêté de nomination visé <span id="result82"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check9">
+                          9-Arrêté de responsabilité visé <span id="result92"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check10">
+                          10-Arrêté de nomination visée hors secteur MESRS (FP) <span id="result102"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check11">
+                          11-Arrêté de nomination visée du conjoint <span id="result112"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <label class="form-check-label" for="check12">
+                          12-Attestation ayant droit <span id="result122"></span> 
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <br><br>
+                      <div class="form-group">
+                        <label for="datetimeinput"> Date et Heure  : <span id="resultdatetime2"></span></label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid float-right" style="width: 310px; height: 250px;" src="cachet_07-04-2021.jpg">
+                    </div>
+                  </div>
+              </div>
+          </div>
+          
+        </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+          <br>
+          <div class="row">
+             <div class="col-sm-8 ">
+                  <div class="col"><a href="../../Contacter_Nous/index.html"><strong> Contacter Nous </strong></a></div>
+              </div>
+              <div class="col"><img class="img-fluid float-right" width="170" height="100" src="800px-ESI_Logo.png"></div> 
+          </div>
+      </div>
+      <br>
+      
+
+        
+        
+        
+
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> 
+
+        <script src="pdf.js"></script>
+
+        
+        
+    </body>
+</html>

@@ -1,0 +1,327 @@
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS for styling and layout-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        
+        
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+        <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        
+        
+
+        
+        <title>Fiche de Renseignements</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: #f1f1f1;">
+        <div class="container-fluid bg-white border">
+          <div class="row">
+            <div class="col"><img class="img-fluid" width="70" height="70" src="log0.png"></div>
+            <div class="col"><br><h3 id="navbar_logo" class="text-right">LOGIS</h3></div>
+          </div>
+          <br>
+        </div>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+          <br>
+          <div class="row">
+            <div class="col"><h1 id="navbar_logo" class="text-left">Imprimer la Fiche de Renseignements </h1></div>
+          </div>
+          <br>
+        </div>
+        <div class="container-xl mt-3">
+          <div class="row">
+              <div class="col-sm-12">
+                
+                
+                <button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;"><a href="index1.html" style="color: white; outline: none;">Retour à La Page Précidante</a></button>
+                <button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white" onclick="printContent('invoice');"><img class="img-fluid" width="35" height="35" src="printer.png"> Imprimer </button>
+                <button type="button" class="btn" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;" onclick="CreatePDFfromHTML();" >Télécharger pdf</button>
+                <button type="button" class="btn float-right" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;"><a href="index0.html" style="color: white; outline: none;">Aller Vers La Liste</a></button>
+                
+              </div>
+          </div>
+        </div>
+        <div id="invoice" class="container-xl bg-white mt-3 border" style="border-radius: 0.5rem;" >
+            <div class="row">
+                <div class="col-sm-12">
+                    <br>
+                    <h4 style="text-align: center;"> République Algérienne Démocratique et Populaire </h4>
+                    <h4 style="text-align: center;"> Ministère de l’Enseignement Supérieur et de la Recherche Scientifique </h4>
+                    <br>
+                    <h4 style="text-align: center;"> Commission de Logement de Wilaya </h4>
+                    <h4 style="text-align: center;"> des établisements de l’enseignement supérieur  </h4>
+                    <h4 style="text-align: center;"> et de la recherche scientifique </h4>
+                    <br><br>
+                    <h4 style="text-align: center;">Fiche de Renseignements</h4>
+                    <br>
+                </div>
+            </div>
+            
+            
+            <div class="col ">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="etabinput"> Etablissement  : <span id=""></span></label>
+                        </div>
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="dirserinput"> Direction, Service  : <span id=""></span></label>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group" style="margin-left: 10%;">
+                                    <label for="matriculeinput"> Matricule  : <span id=""></span></label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group" style="margin-left: 10%;">
+                                    <label for="ndossierinput"> Numéro du Dossier  : <span id=""></span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 ">
+                        <div class="col">Photo</div>
+
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="nominput"> Nom  : <span id=""></span></label>
+                            <br>
+                            <label>(Nom de jeune fille)</label>
+                        </div>
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="prenominput"> Prénom  : <span id=""></span></label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group" style="margin-right: 7%;">
+                            <label for="nomainput" style="float: right;"><span id=""></span> : اللقب</label>
+                            <br>
+                            <label>(اللقب الأصلي للمتزوجة)</label>
+                        </div>
+                        
+                        <div class="form-group" style="margin-right: 7%;">
+                            <label for="prenomainput" style="float: right;"><span id=""></span> : الاسم</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 8%;">
+                            <label for="dlnaissanceinput"> Date et Lieu de naissance  : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="ainput"> à  : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="wilayainput"> Wilaya  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 6%;">
+                            <label for="deinput"> Fils(le) de : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="etdeinput"> et de  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group" style="margin-left: 10%;">
+                            <label for="telinput"> Tél : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-group" style="margin-left: 5%;" >
+                            <label for="emailinput"> Email  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3.5%;">
+                            <label for="adresseinput"> Adresse : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 7%;">
+                            <label for="sitfaminput"> Situation Familiale : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="nbenfinput"> Nombre d'enfants  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" style="margin-left: 7%;">
+                            <label for="nomcinput"> Nom du conjoint : <span id=""></span></label>
+                        </div>
+                        <div class="form-group" style="margin-left: 7%;">
+                            <label for="prenomcinput"> Prénom du conjoint  : <span id=""></span></label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group" style="margin-right: 7%;"> 
+                            <label for="nomacinput" style="float: right;"><span id=""></span> : لقب الزوج(ة)</label>
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-right: 7%;">
+                            <label for="prenomacinput" style="float: right;"><span id=""></span> : اسم الزوج(ة)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 10%;">
+                            <label for="dlnaissanceinput"> Date et Lieu de naissance  : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="ainput"> à  : <span id=""></span></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 5%;">
+                            <label for="wilayainput"> Wilaya  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3%;">
+                            <label for="mesrsinput"> Conjoint au MESRS  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3%;">
+                            <label for="dinstinput"> Dte d'installation à l'Ecole  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3%;">
+                            <label for="gradeinput"> Grade  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3%;">
+                            <label for="ancinput"> Ancienneté  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="margin-left: 3%;">
+                            <label for="anchsinput"> Ancienneté hors secteur(FP nombre du moins)  : <span id=""></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" style="margin-left: 8%;">
+                            <label> Signature de l'interessé</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Signature du chef d'établissement </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        </div>
+
+
+
+        <br>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+          <br>
+            <div class="row">
+                <div class="col-sm-8 ">
+                  <div class="col"><a href="../../Contacter_Nous/index.html"><strong> Contacter Nous </strong></a></div>
+                </div>
+                <div class="col"><img class="img-fluid float-right" width="170" height="100" src="800px-ESI_Logo.png"></div> 
+            </div>
+        </div>
+        <br>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> 
+
+        <script src="pdf2.js"></script>
+    </body>
+</html>

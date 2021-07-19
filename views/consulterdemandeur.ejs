@@ -1,0 +1,328 @@
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS for styling and layout-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <title>Consultation d'un Demandeur</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+       
+    </head>
+    <style>
+        body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #44e0b3;
+  }
+    </style>
+    <body style="background-color: #f1f1f1;">
+        <div class="container-fluid bg-white border">
+            <div class="row">
+                <div class="col"><img class="img-fluid" width="70" height="70" src="log0.png"></div>
+                <div class="col"><br><h3 id="navbar_logo" class="text-right">LOGIS</h3></div>
+            </div>
+            <br>
+        </div>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+            <br>
+            <div class="row">
+                <div class="col"><h1 id="navbar_logo" class="text-left">Consultation d'un Demandeur</h1></div>
+            </div>
+            <br>
+        </div>
+        <div class="container-xl mt-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    
+                   
+                    
+                </div>
+            </div>
+        </div>
+
+        <form action="/consulterdemandeur"  class="needs-validation" novalidate>
+        <div class="container-xl mt-3" style="border-radius: 0.5rem; background-color: #f1f1f1;">
+            <div class="row">
+                <div class="col-sm-6 bg-white border" style="border-radius: 0.5rem;">
+                    <br>
+                    <legend><strong>Etat Civile  : </strong></legend>
+                    <br>
+                    <div class="form-group">
+                    <label for="matriculeinput"> Matricule   : </label>
+                        <input type="text" class="form-control" id="matriculeinput" placeholder="Saisir le matricule ici" name="matricule" value="<%=(g.matricule)%>" style="border-width: 0ch; background-color: transparent;" readonly required >
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numerodudossierinput"> Numéro du dossier  : </label>
+                        <input type="number" class="form-control" id="numerodudossierinput" placeholder="Saisir le numéro du dossier ici" name="numerodudossier" value="<%=(g.NumDossier)%>" style="border-width: 0ch; background-color: transparent;" readonlyrequired>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-group">
+                        <label for="nomprenominput"> Nom et Prénom  : </label>
+                        <input type="text" class="form-control" id="nomprenominput" placeholder="Saisir le nom et le prénom ici" name="nomprenom" value="<%=(g.NomPrenomF)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomprenomainput" class="float-right">  : الاسم واللقب</label>
+                        <input type="text" class="form-control" id="nomprenomainput" placeholder="Saisir le nom et le prénom en Arabe ici" name="nomprenoma" value="<%=(g.NomPrenomA)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="datedenaissanceinput"> Date de naissance  : </label>
+                        <input type="date" class="form-control" id="datedenaissanceinput" name="datedenaissance" value="<%=(g.DateNaissance)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="hommeinput">
+                            <input type="radio" class="form-check-input" id="hommeinput" name="optradio" value="Homme">Homme
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="femmeinput">
+                            <input type="radio" class="form-check-input" id="femmeinput" name="optradio" value="Femme">Femme
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="communedenaissanceinput"> Commune de naissance  : </label>
+                        <input type="text" class="form-control" id="communedenaissanceinput" placeholder="Saisir la commune de naissance ici" name="communedenaissance" value="<%=(g.CommuneNaissance)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="wilaya">Wilaya  : </label>
+                        <input class="form-control" type="text" id="wilaya" name="wilaya" value="<%=(g.wilaya)%>" style="border-width: 0ch; background-color: transparent;" readonly>
+                            
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="adresseinput"> Adresse  : </label>
+                        <input type="text" class="form-control" id="adresseinput" placeholder="Saisir l'adresse ici" name="adresse" value="<%=(g.adresse)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-group">
+                        <label for="numerodeteleinput"> Numéro de Téléphone  : </label>
+                        <input type="tel" class="form-control" id="numerodeteleinput" placeholder="Saisir le numéro de téléphone ici" name="numerodetele" value="<%=(g.NumeroTel)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="codepostaleinput">Code postale  : </label>
+                        <input type="number" class="form-control" id="codepostaleinput" placeholder="Saisir le code postale ici" name="codepostale" value="<%=(g.CodePostale)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailinput">Email  : </label>
+                        <input type="email" class="form-control" id="emailinput" placeholder="Saisir l'email ici" name="email" value="<%=(g.email)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-group">
+                        <label for="prenomdupereinput">Prénom du père  : </label>
+                        <input type="text" class="form-control" id="prenomdupereinput" placeholder="Saisir le prénom du père ici" name="prenomdupere" value="<%=(g.PrenomPere)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombredenfantinput">Nombre d'enfants  : </label>
+                        <input type="number" class="form-control" id="nombredenfantinput" placeholder="Saisir le nombre d'enfants ici" name="nombredenfant" value="<%=(g.NbrEnfants)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="situationfamiliale">Situation familiale  : </label>
+                        <select class="form-control" id="situationfamiliale" name="situationfamiliale" value="<%=(g.SituationFamiliale)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                            <option>célibataire </option>
+                            <option>Marie(é) </option>
+                            <option>Divorce(é) </option>
+                            <option>Veuf(ve)  </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomdemereinput"> Nom de la mère  : </label>
+                        <input type="text" class="form-control" id="nomdemereinput" placeholder="Saisir le nom de la mère ici" name="nomdemere" value="<%=(g.NomMere)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenomdemereinput">Prénom de la mère  : </label>
+                        <input type="text" class="form-control" id="prenomdemereinput" placeholder="Saisir le prénom de la mère ici" name="prenomdemere" value="<%=(g.PrenomMere)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>  
+                </div>
+                <div class="col-sm-6 bg-white border" style="border-radius: 0.5rem;">
+                    <br>
+                    <legend><strong>Experience Professionnelle  : </strong></legend>
+                    <br>
+                    <div class="form-group">
+                        <label for="etablissementinput">Etablissement  : </label>
+                        <input type="text" class="form-control" id="etablissementinput" placeholder="Saisir l'etablissement ici" name="etablissement" value="<%=(g.etablissement)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="directionserviceinput">Direction Service  : </label>
+                        <input type="text" class="form-control" id="directionserviceinput" placeholder="Saisir le direction service ici" name="directionservice" value="<%=(g.DirectionService)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="datedinstallationinput">Date d'installation  : </label>
+                        <input type="date" class="form-control" id="datedinstallationinput" placeholder="Saisir la date d'installation ici" name="datedinstallation" value="<%=(g.DateInstallation)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="derinergradeinput">Deriner grade  : </label>
+                        <input type="text" class="form-control" id="derniergradeinput" placeholder="Saisir le deriner grade ici" name="derniergrade" value="<%=(g.DernierGrade)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-check">
+                        <label for="atravaillehorssecteurinput">A travaillé hors secteur  : </label>
+                        <br>
+                        <label class="form-check-label" for="ouiinput">
+                            <input type="radio" class="form-check-input" id="ouiinput" name="optradio" value="OUI">OUI
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="noninput">
+                            <input type="radio" class="form-check-input" id="noninput" name="optradio" value="NON">NON
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label for="type">Type  : </label>
+                        <br>
+                        <label class="form-check-label" for="priveinput">
+                            <input type="radio" class="form-check-input" id="priveinput" name="optradio" value="prive">Privé 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="etatiqueinput">
+                            <input type="radio" class="form-check-input" id="etatiqueinput" name="optradio" value="etatique">Etatique 
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="datedebutinput"> Date debut hors secteur  : </label>
+                        <input type="date" class="form-control" id="datedebutinput" name="datedebut" value="<%=(g.DateDebut)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="datefininput"> Date fin hors secteur  : </label>
+                        <input type="date" class="form-control" id="datefininput" name="datefin" value="<%=(g.DateFin)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-group">
+                        <label for="responsabiliteinput">Responsabilité  : </label>
+                        <input type="text" class="form-control" id="responsabiliteinput" placeholder="Saisir la responsabilité ici" name="responsabilite" value="<%=(g.responsabilite)%>" style="border-width: 0ch; background-color: transparent;" readonly required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <br>
+                    <hr style="width: 70%;">
+                    <br>
+                    <div class="form-check">
+                        <label for="moudjahid">Moudjahid, fils, fille ou veuf de chahid  : </label>
+                        <br>
+                        <label class="form-check-label" for="ouifinput">
+                            <input type="radio" class="form-check-input" id="ouifinput" name="optradio" value="OUI">OUI
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="nonfinput">
+                            <input type="radio" class="form-check-input" id="nonfinput" name="optradio" value="NON">NON
+                        </label>
+                    </div>
+                    <br>
+                </form>
+                </div>
+                <div class="col" style="background-color: #f1f1f1;"><br> 
+                    <a href=""><button type="button" class="btn float-left" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: black; margin-left: 1rem;">Retour</button></a>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+        <br>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+            <br>
+            <div class="row">
+               <div class="col-sm-8 ">
+                    <div class="col"><a href="#"><strong> Contacter Nous </strong></a></div>
+                </div>
+                <div class="col"><img class="img-fluid float-right" width="170" height="100" src="800px-ESI_Logo.png"></div> 
+            </div>
+        </div>
+        <br>
+
+
+        <script>
+            // Disable form submissions if there are invalid fields
+            (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+        </script>
+        
+    </body>
+</html>

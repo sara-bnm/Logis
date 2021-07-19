@@ -1,0 +1,190 @@
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS for styling and layout-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://kit.fontawesome.com/e25aabb098.js" crossorigin="anonymous"></script>
+        <script defer src="theme.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+
+        <title>Traitement de l'Accusé de Reception</title>
+         
+        <link rel="stylesheet" href="/css/styleaccuse.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: #f1f1f1;">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">1)-Introuduire Les Accusés De Receptions</a>
+        <a href="introduiredemandeur">2)-Introuduire Les Demandeurs</a>
+        <a href="listedemandeurs">3)-Valider Les Demandeurs</a>
+        <a href="consulterclassement">4)-Consulter Le Classement Des Demandeurs</a>
+        <a href="#">5)-Statistique</a>
+        <a href="#">6)-Introuduire Les Recours</a>
+        <a href="#">7)-Consulter L'Historique</a>  
+        <a href="#">8)-Chaine PV</a>
+        <a href="gerercompte">9)-Gerer Les Comptes</a>
+      </div>
+      <div id="main">
+        <div class="container-fluid bg-white border">
+            <div class="row">
+                <div class="col"><img class="img-fluid" width="70" height="70" src="log0.png"></div>
+                <div class="col"><br><h3 id="navbar_logo" class="text-right">LOGIS</h3></div>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="container-fluid " style="border-radius: 0.5rem; background-color: #f1f1f1;">
+          <div class="row">
+            <div class="col-sm-2"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></div>
+            <div class="col-sm-8">
+              <a href="accueil" data-toggle="tooltip" data-placement="left" title="Accueil"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-home icon "></i></button></a>
+              <a href="monprofile" data-toggle="tooltip" data-placement="top" title="Mon Profile"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-user icon"></i></button></a>
+              <a href="aide" data-toggle="tooltip" data-placement="top" title="Aide"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="far fa-question-circle icon"></i></button></a>
+              <a href="home" data-toggle="tooltip" data-placement="right" title="Deconnexion"><button type="button" class="btn" style="background-color: #1f2833; border-radius: 50%; width: 60px; height: 60px;"><i class="fas fa-sign-out-alt icon"></i></button></a>
+            </div>
+            <div class="col-sm-2">
+              <div class="chip " style="float: right; color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);" >
+                <img src="person.png" class="rounded-circle" alt="Person" width="96" height="96">Nom  Prénom
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+            <br>
+            <div class="about-section">
+              <h1>La Liste de l'Acusés</h1>
+            </div>
+            <br>
+            <div class="col-sm-12">
+              <a href="introduireaccuse" style="color: white; outline: none;"><button type="button" class="btn float-right" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;">Introduire une Nouvelle Accusé de Reception</button></a>
+            </div>
+            <div class="row">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="width: 80%; margin-left: 7%; background-color: #f1f1f1;">
+            </div>
+            <div style="overflow-x:auto;">
+            <table id="myTable">
+                <tr class="header">
+                  <th style="width:3%;">N#</th>
+                  <th style="width:30%;">Nom et Prénom</th>
+                  <th style="width:20%;">Matricule</th>
+                  <th style="width:20%;">Numéro du Dossier</th>
+                  <th style="width:15%;">Date de depot de Dossier</th>
+                  <th style="width:6%;">Etat du Dossier</th>
+                  <th style="width:6%;"></th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>aaa bbb</td>
+                  <td>147785</td>
+                  <td>12</td>
+                  <td>30-05-2021</td>
+                  <td>complet</td>
+                  <td>
+                    <a href="accuse" style="color: white; outline: none;"><button type="button" class="btn float-right" style="background-color: #44e0b3; border-radius: 0.5rem; height: 50px; color: white;">Consulter</button></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>ccc ddd</td>
+                  <td>147235</td>
+                  <td>56</td>
+                  <td>30-05-2021</td>
+                  <td>incomplet</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>eee fff</td>
+                  <td>7889212</td>
+                  <td>41</td>
+                  <td>30-05-2021</td>
+                  <td>complet</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Koniglich Essen</td>
+                  <td>4589</td>
+                  <td>25</td>
+                  <td>30-05-2021</td>
+                  <td>complet</td>
+                </tr>
+                
+              </table>
+            </div>
+            <br>
+      </div>
+
+
+
+
+
+        <br>
+        <div class="container-xl mt-3 bg-white border" style="border-radius: 0.5rem;">
+            <br>
+            <div class="row">
+               <div class="col-sm-8 ">
+                    <div class="col"><a href="../../Contacter_Nous/index.html"><strong> Contacter Nous </strong></a></div>
+                </div>
+                <div class="col"><img class="img-fluid float-right" width="170" height="100" src="800px-ESI_Logo.png"></div> 
+            </div>
+        </div>
+        <br>
+      </div>
+
+        <script>
+          $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+          });
+        </script>
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+          }
+          </script>
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+        </script>
+        
+    
+    </body>
+</html>
